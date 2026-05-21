@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog">
+  <title>Blog</title>
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <link href="../css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+  <div id="wrapper">
+    <nav id="sidebar-wrapper" aria-label="Main navigation">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="../index.html">Sheng Lu</a>
+          <span>Academic Website</span>
+        </li>
+        <li class="sidebar-label">Pages</li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../research/index.html">Research</a></li>
+        <li><a href="../publications/index.html">Publications</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li class="sidebar-label">Sections</li>
+        <li><a href="../index.html#awards">Awards &amp; Honors</a></li>
+        <li><a href="../index.html#activities">Academic Activities</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main id="page-content-wrapper">
+      <header class="content-header">
+        <h1><a id="menu-toggle" href="#" class="btn btn-default">☰</a>Blog</h1>
+      </header>
+      <div class="page">
+        
+<section class="hero">
+  <p class="eyebrow">Blog</p>
+  <h2>Blog</h2>
+  <p>
+    A simple blog module for research notes, paper reading summaries, technical tutorials,
+    and project updates. The style is intentionally flat and text-focused.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Posts</h2>
+  <ul class="blog-list">
+    <li>
+      <h3><a href="research-note-template.html">Research Note Template</a></h3>
+      <p>A clean template for writing paper notes, method summaries, or experiment logs.</p>
+    </li>
+    <li>
+      <h3><a href="how-to-add-blog.html">How to Add a New Blog Post</a></h3>
+      <p>Instructions for adding new blog pages to this static website.</p>
+    </li>
+  </ul>
+</section>
+
+        <footer class="footer">© 2026 Sheng Lu. Flat metallic academic website.</footer>
+      </div>
+    </main>
+  </div>
+  <script src="../js/jquery-1.10.2.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("active");
+    });
+  </script>
+</body>
+</html>

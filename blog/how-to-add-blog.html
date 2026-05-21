@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to Add a Blog Post">
+  <title>How to Add a Blog Post</title>
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <link href="../css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+  <div id="wrapper">
+    <nav id="sidebar-wrapper" aria-label="Main navigation">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="../index.html">Sheng Lu</a>
+          <span>Academic Website</span>
+        </li>
+        <li class="sidebar-label">Pages</li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../research/index.html">Research</a></li>
+        <li><a href="../publications/index.html">Publications</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li class="sidebar-label">Sections</li>
+        <li><a href="../index.html#awards">Awards &amp; Honors</a></li>
+        <li><a href="../index.html#activities">Academic Activities</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main id="page-content-wrapper">
+      <header class="content-header">
+        <h1><a id="menu-toggle" href="#" class="btn btn-default">☰</a>How to Add a Blog Post</h1>
+      </header>
+      <div class="page">
+        
+<section class="section article">
+  <h2>How to Add a New Blog Post</h2>
+  <p class="meta">Website guide</p>
+  <ol class="clean-list">
+    <li>Copy <code>research-note-template.html</code>.</li>
+    <li>Rename it, for example <code>my-new-paper-note.html</code>.</li>
+    <li>Edit the title, date, and article body.</li>
+    <li>Add a new link in <code>blog/index.html</code>.</li>
+    <li>Upload the updated files to GitHub Pages.</li>
+  </ol>
+  <h3>Example Entry</h3>
+  <pre class="code-block">&lt;li&gt;
+  &lt;h3&gt;&lt;a href=&quot;my-new-paper-note.html&quot;&gt;My New Paper Note&lt;/a&gt;&lt;/h3&gt;
+  &lt;p&gt;Short description of the blog post.&lt;/p&gt;
+&lt;/li&gt;</pre>
+</section>
+
+        <footer class="footer">© 2026 Sheng Lu. Flat metallic academic website.</footer>
+      </div>
+    </main>
+  </div>
+  <script src="../js/jquery-1.10.2.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("active");
+    });
+  </script>
+</body>
+</html>

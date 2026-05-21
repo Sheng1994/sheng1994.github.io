@@ -1,0 +1,435 @@
+/* Sheng Lu Academic Website - White Minimal Theme */
+
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f5f5f5;
+  --line: #d9d9d9;
+  --text: #000000;
+  --muted: #222222;
+  --soft: #000000;
+  --link: #000000;
+  --sidebar: #f3f3f3;
+  --sidebar-hover: #e8e8e8;
+  --header: #ffffff;
+  --button-bg: #ffffff;
+  --code-bg: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 1px solid #000000;
+}
+
+a:hover,
+a:focus {
+  color: #000000;
+  border-bottom-color: #000000;
+  text-decoration: none;
+}
+
+/* Sidebar based on the uploaded template, simplified */
+#wrapper {
+  padding-left: 250px;
+  transition: all 0.25s ease;
+}
+
+#sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background: var(--sidebar);
+  border-right: 1px solid var(--line);
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.25s ease;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  list-style: none;
+  margin: 0;
+  padding: 22px 0;
+}
+
+.sidebar-nav li {
+  line-height: 38px;
+}
+
+.sidebar-nav li a {
+  color: #000000;
+  display: block;
+  padding: 0 22px;
+  border-bottom: 0;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a.active {
+  color: #000000;
+  background: var(--sidebar-hover);
+}
+
+.sidebar-brand {
+  padding: 0 22px 18px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sidebar-brand a {
+  color: #000000 !important;
+  font-size: 23px;
+  font-weight: 700;
+  padding: 0 !important;
+  border-bottom: 0;
+}
+
+.sidebar-brand span {
+  display: block;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.sidebar-label {
+  padding: 12px 22px 2px;
+  color: #000000;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.content-header {
+  height: 64px;
+  line-height: 64px;
+  background: var(--header);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.content-header h1 {
+  margin: 0 0 0 28px;
+  line-height: 64px;
+  display: inline-block;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#menu-toggle {
+  display: none;
+  margin-right: 10px;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid var(--line);
+}
+
+.page {
+  max-width: 1120px;
+  padding: 34px;
+}
+
+.hero {
+  padding: 30px 0 32px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 30px;
+}
+
+.hero .eyebrow {
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  margin: 0 0 12px;
+}
+
+.hero h2 {
+  color: #000000;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  max-width: none;
+  width: 100%;
+  color: #000000;
+  font-size: 18px;
+  margin-bottom: 22px;
+}
+
+.btn-metal {
+  display: inline-block;
+  padding: 9px 15px;
+  border: 1px solid #000000;
+  background: #ffffff;
+  color: #000000;
+  margin: 0 8px 8px 0;
+}
+
+.btn-metal:hover {
+  background: #f5f5f5;
+  color: #000000;
+}
+
+.section {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 24px;
+  margin-bottom: 22px;
+}
+
+.section h2 {
+  color: #000000;
+  font-size: 24px;
+  font-weight: 650;
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section h3 {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0 8px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.entry {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.entry:last-child {
+  border-bottom: 0;
+}
+
+.entry-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  color: #000000;
+  font-weight: 600;
+}
+
+.entry-title span {
+  color: #000000;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.entry p {
+  color: #000000;
+  margin: 5px 0 0;
+}
+
+.clean-list {
+  padding-left: 18px;
+  margin-bottom: 0;
+}
+
+.clean-list li {
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.research-block {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.research-block:last-child {
+  border-bottom: 0;
+}
+
+.research-block h3 {
+  margin-top: 0;
+}
+
+.research-block .label {
+  display: inline-block;
+  color: #000000;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 3px 7px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.pub-list {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.pub-list li {
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.pub-list strong,
+.pub-list em {
+  color: #000000;
+}
+
+.pub-group-title {
+  margin-top: 8px;
+  color: #000000;
+  font-size: 19px;
+}
+
+.blog-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.blog-list li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.blog-list li:last-child {
+  border-bottom: 0;
+}
+
+.blog-list h3 {
+  margin: 0 0 6px;
+  color: #000000;
+}
+
+.blog-list p {
+  color: #000000;
+  margin: 0;
+}
+
+.article {
+  max-width: 880px;
+}
+
+.article .meta {
+  color: #000000;
+  margin-top: -8px;
+}
+
+.code-block {
+  background: #f5f5f5;
+  border: 1px solid var(--line);
+  color: #000000;
+  padding: 14px;
+  overflow-x: auto;
+}
+
+.footer {
+  color: #000000;
+  border-top: 1px solid var(--line);
+  padding: 20px 0 34px;
+  margin-top: 24px;
+}
+
+p, li, span, div, strong, em, h1, h2, h3, h4, h5, h6 {
+  color: #000000;
+}
+
+@media (max-width: 900px) {
+  .two-col,
+  .three-col {
+    grid-template-columns: 1fr;
+  }
+
+  .entry-title {
+    display: block;
+  }
+
+  .entry-title span {
+    display: block;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 767px) {
+  #wrapper {
+    padding-left: 0;
+  }
+
+  #sidebar-wrapper {
+    left: 0;
+  }
+
+  #wrapper.active {
+    position: relative;
+    left: 250px;
+  }
+
+  #wrapper.active #sidebar-wrapper {
+    left: 250px;
+    width: 250px;
+  }
+
+  #menu-toggle {
+    display: inline-block;
+  }
+
+  .content-header h1 {
+    margin-left: 16px;
+    font-size: 18px;
+  }
+
+  .page {
+    padding: 22px 15px;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 18px;
+  }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research">
+  <title>Research</title>
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <link href="../css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+  <div id="wrapper">
+    <nav id="sidebar-wrapper" aria-label="Main navigation">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="../index.html">Sheng Lu</a>
+          <span>Academic Website</span>
+        </li>
+        <li class="sidebar-label">Pages</li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../research/index.html">Research</a></li>
+        <li><a href="../publications/index.html">Publications</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li class="sidebar-label">Sections</li>
+        <li><a href="../index.html#awards">Awards &amp; Honors</a></li>
+        <li><a href="../index.html#activities">Academic Activities</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main id="page-content-wrapper">
+      <header class="content-header">
+        <h1><a id="menu-toggle" href="#" class="btn btn-default">☰</a>Research</h1>
+      </header>
+      <div class="page">
+        
+<section class="hero">
+  <p class="eyebrow">Research</p>
+  <h2>Research Work</h2>
+  <p>
+    This page describes each research direction and the concrete work performed,
+    without extra decorative components.
+  </p>
+</section>
+
+<section class="section">
+  <h2>RFET-Based FPGA Architecture</h2>
+  <p>
+    This research studies how emerging reconfigurable field-effect transistor technologies
+    can be used to build new FPGA architectures. The goal is to connect device-level
+    characteristics with system-level architecture benefits.
+  </p>
+  <h3>Specific Work</h3>
+  <ul class="clean-list">
+    <li>Designed FPGA architectures using emerging reconfigurable digital technologies.</li>
+    <li>Built technology/system co-optimization workflows for RFET-based FPGA design.</li>
+    <li>Evaluated how RFET logic characteristics affect LUT organization, mapping efficiency, area, and delay.</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>EDA Algorithms for Reconfigurable Logic</h2>
+  <p>
+    This research focuses on algorithmic support for FPGA implementation, especially
+    when the target hardware contains non-traditional or multi-output logic structures.
+  </p>
+  <h3>Specific Work</h3>
+  <ul class="clean-list">
+    <li>Developed multi-output LUT mapping algorithms to reduce FPGA logic area.</li>
+    <li>Designed delay-aware packing algorithms for RFET-based FPGA architectures.</li>
+    <li>Investigated dual-output LUT technology mapping and logic decomposition methods.</li>
+    <li>Integrated algorithm design with architecture-level evaluation to quantify practical benefits.</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Mixed-Signal Neuromorphic Circuit Design</h2>
+  <p>
+    This research studies energy-efficient neural computation through mixed-signal
+    circuit design, SPICE-level simulation, and reconfigurable neuromorphic architectures.
+  </p>
+  <h3>Specific Work</h3>
+  <ul class="clean-list">
+    <li>Developed an efficient mixed-signal SPICE simulation platform for on-chip learning.</li>
+    <li>Designed reconfigurable neuromorphic architectures with mapping and placement algorithms.</li>
+    <li>Studied RFET-based stochastic computing neural network acceleration.</li>
+    <li>Evaluated energy-efficient analog and mixed-signal neural accelerator design methods.</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Semiconductor Testing Automation</h2>
+  <p>
+    This work comes from industry experience in failure analysis and lab automation.
+  </p>
+  <h3>Specific Work</h3>
+  <ul class="clean-list">
+    <li>Automated semiconductor parameter testing using Python-controlled laboratory instruments.</li>
+    <li>Correlated circuit behavior with process variation and physical defects for root-cause analysis.</li>
+    <li>Improved lab workflows using reusable automation scripts and instrument-control procedures.</li>
+  </ul>
+</section>
+
+        <footer class="footer">© 2026 Sheng Lu. Flat metallic academic website.</footer>
+      </div>
+    </main>
+  </div>
+  <script src="../js/jquery-1.10.2.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("active");
+    });
+  </script>
+</body>
+</html>
