@@ -26,15 +26,15 @@ author:
   avatar           : "profile.png"
   name             : "Sheng Lu"
   bio              : "EE PhD Candidate, UT Arlington"
-  location         : "Arlington, TX"
+  # location         : "Arlington, TX"
   employer         : "The University of Texas at Arlington"
   uri              : # URL
   email            : "shenglu9410@gmail.com"
 
   # Academic websites
-  googlescholar    : "https://github.com/Sheng1994"
-  orcid            : "https://github.com/Sheng1994"
-  researchgate     : "https://github.com/Sheng1994"
+  googlescholar    : "https://sheng1994.github.io"
+  orcid            : "https://sheng1994.github.io"
+  researchgate     : "https://sheng1994.github.io"
 
 
   # Repositories and software development
