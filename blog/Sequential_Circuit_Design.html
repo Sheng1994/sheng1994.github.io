@@ -90,6 +90,27 @@
             <li><strong>Min-Delay Constraint:</strong> avoid racing between previous and current signals, t<sub>cd</sub> &ge; 
 			t<sub>hold</sub> - t<sub>ccq</sub>.</li>
           </ul>
+
+		  <h4>Time Borrowing</h4>
+          <ul>
+            <li>For 2-phase Latch systems, the signal departs from the first Latch on the rising edge, and it can keep processing
+			in the combinational logic until the falling edge of the second Latch edge. That means in 2-pahse Latch system, the
+			previous cycle can borrow time from the next cycle. However, time borrowing may induce unstable problems.</li>
+          </ul>
+
+		  <h4>Time Skew</h4>
+          <ul>
+            <li>However, the realistic clock is not ideal, it may have skew which means the rising/fall edges will be early or late. 
+			The clock skew will influence the previously mention max-delay and min-delay , especially for the Flip-Flop systems. For 
+			FF systems, the worst scenario for max-delay is the lunching edge comes late and receiving edge comes early which will 
+			reduce the time for t<sub>setup</sub>; the worst scenario for min-delay is the luncging edge comes early and the 
+			receiving edge comes late which will reduce the time for t<sub>cd</sub>.</li>
+          </ul>
+          <ul>
+            <li>For Latch-based systems, the clock skew influence will not as obvious as the FF systems, it's called skew-tolerant. 
+			However, sometimes, the clock skew will reduce the availablity of time borrowing.</li>
+          </ul>
+
 		  
           <h3>3. Clocked Sequential Circuits</h3>
           <p>
