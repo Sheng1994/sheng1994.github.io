@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sequential Circuit Design Blog">
+  <title>Sequential Circuit Design</title>
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <link href="../css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+  <div id="wrapper">
+    <nav id="sidebar-wrapper" aria-label="Main navigation">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a href="../index.html">Sheng Lu</a>
+          <span>Academic Website</span>
+        </li>
+        <li class="sidebar-label">Pages</li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../research/index.html">Research</a></li>
+        <li><a href="../publications/index.html">Publications</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li class="sidebar-label">Sections</li>
+        <li><a href="../index.html#awards">Awards &amp; Honors</a></li>
+        <li><a href="../index.html#activities">Academic Activities</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main id="page-content-wrapper">
+      <header class="content-header">
+        <h1><a id="menu-toggle" href="#" class="btn btn-default">☰</a>Digital Circuit Design</h1>
+      </header>
+
+      <div class="page">
+        <section class="section article">
+          <h2>Sequential Circuit Design</h2>
+          <p class="meta">Digital Circuit Design · Memory Elements · Finite State Machines · Timing Analysis</p>
+
+          <p>
+            Sequential circuit design is a fundamental topic in digital logic and computer engineering.
+            Unlike combinational circuits, whose outputs depend <strong>only on current inputs</strong>, 
+			sequential circuits depend on both current inputs and <strong>previous states</strong>. This 
+			ability to store and update information makes sequential circuits essential for processors, 
+			memory systems, controllers, counters, communication interfaces, and many digital systems.
+          </p>
+
+          <h3>1. Combinational Circuits vs. Sequential Circuits</h3>
+          <p>
+            A combinational circuit produces outputs based only on the present input values. Examples include
+            adders, multiplexers, decoders, and logic gates. A sequential circuit, however, contains memory
+            elements such as latches or flip-flops, allowing the circuit to remember past information.
+          </p>
+
+          <ul>
+            <li><strong>Combinational circuit:</strong> output depends only on current inputs.</li>
+            <li><strong>Sequential circuit:</strong> output depends on current inputs and stored states.</li>
+          </ul>
+
+          <h3>2. Basic Sequencing Static Circuits</h3>
+          <p>
+            The key component of a sequential circuit is the memory element. Common memory elements include
+            latches and flip-flops. A latch is level-sensitive, while a flip-flop is edge-triggered. In synchronous
+            digital systems, flip-flops are widely used because they update their states at specific clock edges.
+          </p>
+		  
+		  <h4>Basic Memory Elements</h4>
+          <ul>
+            <li><strong>Latch:</strong> transparent D->Q when clk is high and hold current data when clk is low.</li>
+            <li><strong>Flip-Flop:</strong> copy D->Q at clk rising edge and hold current data at all other times.</li>
+          </ul>
+		  
+		  <h4>Sequencing Methods</h4>
+          <ul>
+            <li><strong>Flip-Flop->Combinational Logic->Flip-Flop:</strong> each cycle boundry has a Flip-Flop.</li>
+			<li><strong>Latch<sub>Phase1</sub>->Combinational Logic 1->Latch<sub>Phase2</sub>->Combinational Logic 2->
+			Latch<sub>Phase1</sub>:</strong> each time only one latch is opaque for avoiding comptition between previous
+			and after signals. The difference between 2 phase is called t<sub>nonoverlap</sub>.</li>
+			<li><strong>Pulses Latch->Combinational Logic->Pulses Latch:</strong> similar to the Flip-Flop.</li>
+          </ul>
+
+          <h3>3. Clocked Sequential Circuits</h3>
+          <p>
+            Most modern digital systems are synchronous, meaning that state changes occur according to a clock
+            signal. The clock provides a global timing reference, helping designers control when data is captured
+            and transferred between registers. Proper clock design is important for ensuring stable and predictable
+            circuit behavior.
+          </p>
+
+          <h3>4. Finite State Machines</h3>
+          <p>
+            A finite state machine, or FSM, is a common model for designing sequential control logic. An FSM has
+            a finite number of states, transitions between states, and outputs determined by the current state and
+            possibly the inputs. FSMs are widely used in control units, protocol controllers, vending machines,
+            traffic light systems, and digital communication systems.
+          </p>
+
+          <h4>Moore Machine</h4>
+          <p>
+            In a Moore machine, the output depends only on the current state. This structure is usually easier to
+            analyze and provides stable outputs because output changes only when the state changes.
+          </p>
+
+          <h4>Mealy Machine</h4>
+          <p>
+            In a Mealy machine, the output depends on both the current state and the current inputs. This can reduce
+            the number of states and provide faster response, but the output may change immediately when the input changes.
+          </p>
+
+          <h3>5. Design Procedure</h3>
+          <p>
+            A typical sequential circuit design process includes the following steps:
+          </p>
+
+          <ol>
+            <li>Define the problem and identify required inputs and outputs.</li>
+            <li>Determine the states needed to describe the circuit behavior.</li>
+            <li>Create a state diagram or state transition table.</li>
+            <li>Choose appropriate flip-flops or registers.</li>
+            <li>Derive the next-state logic and output logic.</li>
+            <li>Implement the circuit using gates, HDL, or FPGA tools.</li>
+            <li>Simulate and verify the circuit behavior.</li>
+            <li>Check timing constraints before hardware implementation.</li>
+          </ol>
+
+          <h3>6. Timing Considerations</h3>
+          <p>
+            Timing analysis is critical in sequential circuit design. Important timing parameters include setup time,
+            hold time, propagation delay, clock period, and clock skew. If timing constraints are violated, the circuit
+            may produce incorrect results or enter a metastable state.
+          </p>
+
+          <ul>
+            <li><strong>Setup time:</strong> the input must be stable before the active clock edge.</li>
+            <li><strong>Hold time:</strong> the input must remain stable after the active clock edge.</li>
+            <li><strong>Clock-to-Q delay:</strong> the delay from the clock edge to the flip-flop output change.</li>
+            <li><strong>Clock skew:</strong> the difference in clock arrival time at different flip-flops.</li>
+          </ul>
+
+          <h3>7. Example Applications</h3>
+          <p>
+            Sequential circuits are used in many real digital systems. Registers store temporary data in processors,
+            counters track events or clock cycles, shift registers move data serially, and FSMs control complex system
+            behavior. In FPGA and ASIC design, sequential logic is a central part of building reliable and scalable systems.
+          </p>
+
+          <h3>8. Summary</h3>
+          <p>
+            Sequential circuit design connects logic computation with memory and timing. By using flip-flops, clocks,
+            state machines, and timing analysis, designers can build digital systems that perform ordered operations
+            over time. A solid understanding of sequential circuits is essential for advanced topics such as processor
+            architecture, FPGA design, digital control systems, and hardware acceleration.
+          </p>
+
+          <p>
+            <a class="btn btn-default" href="../blog/index.html">Back to Blog</a>
+          </p>
+        </section>
+
+        <footer class="footer">© 2026 Sheng Lu. Flat metallic academic website.</footer>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/jquery-1.10.2.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("active");
+    });
+  </script>
+</body>
+</html>
