@@ -79,8 +79,18 @@
 			Latch<sub>Phase1</sub>:</strong> each time only one latch is opaque for avoiding comptition between previous
 			and after signals. The difference between 2 phase is called t<sub>nonoverlap</sub>.</li>
 			<li><strong>Pulses Latch->Combinational Logic->Pulses Latch:</strong> similar to the Flip-Flop.</li>
+			<li><strong>Flip-Flop = a back-to-back Latch pair</strong>.</li>
           </ul>
-
+		  
+		  <h4>Delay Constraints</h4>
+          <ul>
+            <li><strong>Max-Delay Constraint:</strong> ensure the cycle time can cover the delay for combinational Circuit,
+			t<sub>c</sub> &ge; t<sub>pcq</sub> + t<sub>pd</sub> + t<sub>setup</sub>. Here is the example for FF, Latch-based 
+			fomula is more complex.</li>
+            <li><strong>Min-Delay Constraint:</strong> avoid racing between previous and current signals, t<sub>cd</sub> &ge; 
+			t<sub>hold</sub> - t<sub>ccq</sub>.</li>
+          </ul>
+		  
           <h3>3. Clocked Sequential Circuits</h3>
           <p>
             Most modern digital systems are synchronous, meaning that state changes occur according to a clock
